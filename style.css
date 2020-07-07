@@ -9,45 +9,58 @@ body {
   flex-flow: column nowrap;
 }
 form {
-   margin-top: 30%
+  margin-top: 2%;
 }
 .gameTitle {
   color: #ffffff;
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
     0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18;
-    font-family: 'Fondamento', cursive;
-    font-size: 50px;
-    text-align: center;
+  font-family: "Fondamento", cursive;
+  font-size: 50px;
+  text-align: center;
 }
 .cardDiv {
-  height: 20vh;
+  height: 30vh;
   width: 50vw;
-  border: 2px solid black;
+  border: 2px solid gray;
 }
 .green {
-   color: transparent;
-   text-shadow: 0px 3px 3px rgba(76, 235, 103, 0.486);
+  color: transparent;
+  text-shadow: 0px 3px 3px rgba(76, 235, 103, 0.486);
 }
 .red {
-   color: transparent;
-   text-shadow: 0px 3px 3px rgba(76, 235, 103, 0.486);
+  color: transparent;
+  text-shadow: 0px 3px 3px rgba(76, 235, 103, 0.486);
 }
 .displayCard {
-   display: block;
+  display: block;
 }
 .bottomCard {
-   background-color: green;
-   height: 20vh;
+  background-color: grey;
+  height: 30vh;
   width: 50vw;
   border: 2px solid black;
 }
 .topCard {
-   background-color: grey;
-   height: 20vh;
+  background-color: green;
+  height: 30vh;
   width: 50vw;
   border: 2px solid black;
 }
 .hideCard {
-   display: none;
+  display: none;
 }
 
+/* form and bottom input/button */
+.resetBtn {
+   margin-top: 15px;
+   padding: 10px 20px 10px 20px;
+   background-color: rgba(21, 114, 61, 0.664);
+   color: springgreen;
+   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
+   0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18;
+   font-family: "Fondamento", cursive;
+}
+.input {
+   
+}
