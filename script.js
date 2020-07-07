@@ -3,7 +3,7 @@
 
 console.log("hello world");
 let prompter = document.querySelector(".prompter");
-prompter.innerHTML = "Am I Posionous?";
+prompter.innerHTML = "Please Reset the Game";
 prompter.classList.add("green");
 let cardDiv = document.querySelector(".cardDiv");
 cardDiv.addEventListener('click', flipCard);

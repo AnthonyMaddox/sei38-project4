@@ -3,12 +3,13 @@
 }
 body {
   background-color: #232323;
-}
-form {
-   display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: column nowrap;
+}
+form {
+   margin-top: 30%
 }
 .gameTitle {
   color: #ffffff;
@@ -30,5 +31,23 @@ form {
 .red {
    color: transparent;
    text-shadow: 0px 3px 3px rgba(76, 235, 103, 0.486);
+}
+.displayCard {
+   display: block;
+}
+.bottomCard {
+   background-color: green;
+   height: 20vh;
+  width: 50vw;
+  border: 2px solid black;
+}
+.topCard {
+   background-color: grey;
+   height: 20vh;
+  width: 50vw;
+  border: 2px solid black;
+}
+.hideCard {
+   display: none;
 }
 

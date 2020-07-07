@@ -1,9 +1,9 @@
 # resetGame function
-#### runs onclick of reset game button
+#### runs when reset game button is clicked
 #### get information for deck of cards
-#### build a class deck that builds cards containing image, name, poisonous, (properties)
+#### build a class deck that builds cards containing image, name, poisonous, (properties) //gladiator lab
 
-#### shuffleCards function to shuffle cards
+#### shuffleCards function to shuffle cards //game of war
 #### display top card image prperty within background image of topCard div
 #### topCard div displayed block and bottomCard div (contains info from name and poisonous card properties) display none
 ##### need animation for flipping card over
@@ -15,4 +15,4 @@
 #### If bottomCard div has class of display block ==> if value of poisonous == the value of input {remove card from array} else {return card to deck and shuffle deck}. Then display top card info on card divs.
 #### else flips over card. cardTop display = none card bottom display = block.  
 
-### if no cards left in deck gameOver "you know your poisonous plants!" please reset game   
+### if no cards left in deck gameOver show text in prompterdiv "you know your poisonous plants!" please reset game   
