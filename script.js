@@ -1,24 +1,6 @@
 //start building some things on the page with js so you can feel having access to them...
 //pics from https://www.webmd.com/skin-problems-and-treatments/ss/slideshow-poison-plants-guide
 
-//this is to unstick focus from reset button after click so hitting space bar wont keep resetting the game
-document.addEventListener("click", function () {
-  if (document.activeElement.toString() == "[object HTMLButtonElement]") {
-    document.activeElement.blur();
-  }
-});
-
-document.addEventListener("keypress", function (e) {
-  e.preventDefault();
-  if (e.code === "Space") {
-    if (topCard.classList.contains("hideCard")) {
-      resetGame()
-      displayTopCard();
-    } else {
-      flipCard();
-    }
-  }
-});
 let cardArray = [];
 let activeCard = {};
 let input = document.querySelector("input");
@@ -30,6 +12,19 @@ bottomCard.classList.add("hideCard");
 let prompter = document.querySelector(".prompter");
 prompter.innerHTML = "Press Spacebar";
 prompter.classList.add("green");
+
+
+//spacebar key press
+document.addEventListener("keypress", function (e) {
+  e.preventDefault();
+  if (e.code === "Space") {
+    if (topCard.classList.contains("hideCard")) {
+      displayTopCard();
+    } else {
+      flipCard();
+    }
+  }
+});
 
 //Deck
 
@@ -71,15 +66,19 @@ function shuffle(cards) {
 //functions
 
 function displayTopCard() {
-  topCard.classList.remove("hideCard");
-  bottomCard.classList.add("hideCard");
-  cardArray.push(activeCard);
-  console.log(cardArray);
-  shuffle(cardArray);
-  activeCard = cardArray.shift();
-  console.log(activeCard);
-  topCard.style.backgroundImage = `url(${activeCard.img})`;
-  bottomCard.innerHTML = `${activeCard.name}`;
+  if (cardArray.length == 0) {
+    resetGame();
+  } else {
+    topCard.classList.remove("hideCard");
+    bottomCard.classList.add("hideCard");
+    cardArray.push(activeCard);
+    console.log(cardArray);
+    shuffle(cardArray);
+    activeCard = cardArray.shift();
+    console.log(activeCard);
+    topCard.style.backgroundImage = `url(${activeCard.img})`;
+    bottomCard.innerHTML = `${activeCard.name}`;
+  }
 }
 
 function removeCard() {
@@ -136,14 +135,19 @@ let cardDiv = document.querySelector(".cardDiv");
 cardDiv.addEventListener("click", function (e) {
   e.preventDefault();
   if (bottomCard.classList.contains("hideCard")) {
-    bottomCard.classList.remove("hideCard");
-    topCard.classList.add("hideCard");
+    flipCard();
   } else {
-    topCard.classList.remove("hideCard");
-    bottomCard.classList.add("hideCard");
+    displayTopCard();
   }
 });
 
 //let input = document.querySelector('input')
 //form.addEventListener("keyup", checkCard);
 //form.addEventListener("submit", flipCard);
+/*this is to unstick focus from reset button after click so hitting space bar wont keep resetting the game:
+document.addEventListener("click", function () {
+  if (document.activeElement.toString() == "[object HTMLButtonElement]") {
+    document.activeElement.blur();
+  }
+});
+*/

@@ -9,14 +9,15 @@ body {
   flex-flow: column nowrap;
 }
 form {
-  margin-top: 2%;
+  margin-top: 20px;
 }
 .gameTitle {
+  margin-top: 60px;
   color: #ffffff;
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
     0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18;
   font-family: "Fondamento", cursive;
-  font-size: 40px;
+  font-size: 45px;
   text-align: center;
 }
 .green {
@@ -59,10 +60,13 @@ form {
   background-color: transparent;
   height: 40vh;
   width: 60vw;
+  background-position: center;
+  background-size: cover;
 }
 .hideCard {
   display: none;
 }
+
 /*.displayCard {
    display: block;
  }
@@ -84,6 +88,4 @@ label {
   color: transparent;
   text-shadow: 0px 3px 3px rgba(76, 235, 103, 0.486);
   font-size: 20px;
-}
-form {
 }
