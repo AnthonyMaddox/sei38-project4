@@ -18,11 +18,7 @@ form {
   font-family: "Fondamento", cursive;
   font-size: 50px;
   text-align: center;
-}
-.cardDiv {
-  height: 30vh;
-  width: 50vw;
-}
+}  
 .green {
   color: transparent;
   text-shadow: 0px 3px 3px rgba(76, 235, 103, 0.486);
@@ -31,11 +27,20 @@ form {
   color: transparent;
   text-shadow: 0px 3px 3px rgba(76, 235, 103, 0.486);
 }
+/*card divs*/
+.cardDiv {
+   height: 30vh;
+   width: 50vw;
+   background-color: transparent;
+   perspective: 1000px;
+ }
+ .cardDiv:hover 
 .bottomCard {
   background-color: grey;
   height: 30vh;
   width: 50vw;
   border: 2px solid black;
+  transform: rotateY(180deg);
 }
 .topCard {
   background-color: green;
@@ -51,7 +56,6 @@ form {
 .displayCard {
    display: block;
    left: 0;
-   transition: .7s;
  }
 
 /* form and bottom input/button */

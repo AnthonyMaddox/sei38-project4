@@ -39,7 +39,6 @@ cardArray.push(
 );
 console.log(cardArray);
 
-console.log("hello world");
 let prompter = document.querySelector(".prompter");
 prompter.innerHTML = "Please Reset the Game";
 prompter.classList.add("green");
