@@ -18,7 +18,7 @@ form {
   font-family: "Fondamento", cursive;
   font-size: 50px;
   text-align: center;
-}  
+}
 .green {
   color: transparent;
   text-shadow: 0px 3px 3px rgba(76, 235, 103, 0.486);
@@ -29,18 +29,19 @@ form {
 }
 /*card divs*/
 .cardDiv {
-   height: 30vh;
-   width: 50vw;
-   background-color: transparent;
-   perspective: 1000px;
- }
- .cardDiv:hover 
+  height: 30vh;
+  width: 50vw;
+  background-color: transparent;
+  perspective: 1000px;
+}
 .bottomCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: grey;
   height: 30vh;
   width: 50vw;
   border: 2px solid black;
-  transform: rotateY(180deg);
 }
 .topCard {
   background-color: green;
@@ -50,13 +51,11 @@ form {
 }
 .hideCard {
   display: none;
-  right: 0;
-  transition: .7s;
 }
-.displayCard {
+/*.displayCard {
    display: block;
-   left: 0;
  }
+ */
 
 /* form and bottom input/button */
 .resetBtn {
@@ -67,7 +66,9 @@ form {
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
     0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18;
   font-family: "Fondamento", cursive;
+  cursor: pointer;
+  outline: none;
 }
 .input {
-   padding: 100px;
+  padding: 100px;
 }
