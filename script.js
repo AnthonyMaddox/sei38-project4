@@ -12,6 +12,7 @@ document.addEventListener("keypress", function (e) {
   e.preventDefault();
   if (e.code === "Space") {
     if (topCard.classList.contains("hideCard")) {
+      resetGame()
       displayTopCard();
     } else {
       flipCard();
@@ -27,7 +28,7 @@ let topCard = document.querySelector(".topCard");
 let bottomCard = document.querySelector(".bottomCard");
 bottomCard.classList.add("hideCard");
 let prompter = document.querySelector(".prompter");
-prompter.innerHTML = "Please Reset the Game";
+prompter.innerHTML = "Press Spacebar";
 prompter.classList.add("green");
 
 //Deck
@@ -39,7 +40,7 @@ class Flashcard {
   }
 }
 
-const ivy = new Flashcard("Poison Ivy", "imgs/poison-ivy.jpg");
+const ivy = new Flashcard("Poison Ivy", "imgs/ivy.jpg");
 const oak = new Flashcard("Poison Oak", "imgs/oak.jpg");
 const sumac = new Flashcard("Poison Sumac", "imgs/sumac.jpg");
 const foxglove = new Flashcard("Foxgolve", "imgs/foxglove.jpg");
@@ -70,8 +71,8 @@ function shuffle(cards) {
 //functions
 
 function displayTopCard() {
-  topCard.classList.toggle("hideCard");
-  bottomCard.classList.toggle("hideCard");
+  topCard.classList.remove("hideCard");
+  bottomCard.classList.add("hideCard");
   cardArray.push(activeCard);
   console.log(cardArray);
   shuffle(cardArray);
