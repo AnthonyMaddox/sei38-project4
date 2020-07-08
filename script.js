@@ -127,6 +127,7 @@ function resetGame() {
   bottomCard.innerHTML = `${activeCard.name}`;
   bottomCard.classList.add("hideCard");
   topCard.classList.remove("hideCard");
+  prompter.innerText = "Be Careful...";
 }
 
 //click on picture in game board
