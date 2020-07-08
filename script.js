@@ -2,29 +2,22 @@
 //pics from https://www.webmd.com/skin-problems-and-treatments/ss/slideshow-poison-plants-guide
 
 let cardArray = [];
+let successArray = [];
 let activeCard = {};
-let input = document.querySelector("input");
 let resetBtn = document.querySelector(".resetBtn");
 resetBtn.addEventListener("click", resetGame);
 let topCard = document.querySelector(".topCard");
 let bottomCard = document.querySelector(".bottomCard");
 bottomCard.classList.add("hideCard");
 let prompter = document.querySelector(".prompter");
-prompter.innerHTML = "Press Spacebar";
+prompter.innerHTML = "Enter the Forest...";
 prompter.classList.add("green");
-
-
-//spacebar key press
-document.addEventListener("keypress", function (e) {
-  e.preventDefault();
-  if (e.code === "Space") {
-    if (topCard.classList.contains("hideCard")) {
-      displayTopCard();
-    } else {
-      flipCard();
-    }
-  }
-});
+//let input = document.querySelector("input");
+//input.addEventListener("submit", compareCards);
+let input = document.querySelector("form");
+input.addEventListener("submit", compareCards);
+let score = document.querySelector(".score")
+score.innerHTML = 0
 
 //Deck
 
@@ -98,6 +91,10 @@ function flipCard() {
 }
 
 function compareCards() {
+   if (input.value == activeCard.name) {
+      successArray.push()
+
+   }
   console.log("compareCards function");
 }
 
@@ -130,6 +127,7 @@ function resetGame() {
   prompter.innerText = "Be Careful...";
 }
 
+
 //click on picture in game board
 let cardDiv = document.querySelector(".cardDiv");
 cardDiv.addEventListener("click", function (e) {
@@ -144,10 +142,30 @@ cardDiv.addEventListener("click", function (e) {
 //let input = document.querySelector('input')
 //form.addEventListener("keyup", checkCard);
 //form.addEventListener("submit", flipCard);
+
 /*this is to unstick focus from reset button after click so hitting space bar wont keep resetting the game:
 document.addEventListener("click", function () {
   if (document.activeElement.toString() == "[object HTMLButtonElement]") {
     document.activeElement.blur();
+  }
+});
+*/
+
+//spacebar key press
+/*document.addEventListener("keypress", function (e) {
+  e.preventDefault();
+  if (e.code == "Digit0") {
+    if (topCard.classList.contains("hideCard")) {
+      displayTopCard();
+    } else {
+      flipCard();
+    }
+  }
+});
+document.addEventListener("keypress", function (e) {
+  e.preventDefault();
+  if (e.code == "Digit1") {
+    resetGame();
   }
 });
 */
