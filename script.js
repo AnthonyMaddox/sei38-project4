@@ -14,10 +14,12 @@ prompter.innerHTML = "Enter the Forest...";
 prompter.classList.add("green");
 //let input = document.querySelector("input");
 //input.addEventListener("submit", compareCards);
-let input = document.querySelector("form");
-input.addEventListener("submit", compareCards);
-let score = document.querySelector(".score")
-score.innerHTML = 0
+let form = document.querySelector("form");
+form.addEventListener("submit", compareCards);
+let score = document.querySelector(".score");
+score.innerHTML = 0;
+bottomCard.innerHTML = "Enter your guess before you flip the card over or, you'll never leave.";
+bottomCard.classList.add("instructions");
 
 //Deck
 
@@ -58,6 +60,36 @@ function shuffle(cards) {
 
 //functions
 
+function resetGame() {
+  cardArray = [];
+  cardArray.push(
+    ivy,
+    oak,
+    sumac,
+    foxglove,
+    jimsonweed,
+    hemlock,
+    oleander,
+    parnsnip,
+    nettle,
+    nightshade,
+    azalea,
+    mistletoe,
+    hogweed,
+    trumpet
+  );
+  console.log(cardArray);
+  cardArray = shuffle(cardArray);
+  activeCard = cardArray.shift();
+  console.log(activeCard);
+  topCard.style.backgroundImage = `url(${activeCard.img})`;
+  bottomCard.innerHTML = `${activeCard.name}`;
+  bottomCard.classList.add("hideCard");
+  topCard.classList.remove("hideCard");
+  prompter.innerText = "Be Careful...";
+  bottomCard.classList.remove("instructions");
+}
+
 function displayTopCard() {
   if (cardArray.length == 0) {
     resetGame();
@@ -89,44 +121,16 @@ function flipCard() {
   bottomCard.classList.remove("hideCard");
   topCard.classList.add("hideCard");
 }
-
-function compareCards() {
-   if (input.value == activeCard.name) {
-      successArray.push()
-
-   }
-  console.log("compareCards function");
+let input = document.querySelector('input[type="text"]');
+function compareCards(e) {
+  e.preventDefault();
+  if (input.value == activeCard.name) {
+    console.log("you got it");
+  }
+  else {
+   console.log("Looks like you need some calamine lotion for that dermatitis!");
+  }
 }
-
-function resetGame() {
-  cardArray = [];
-  cardArray.push(
-    ivy,
-    oak,
-    sumac,
-    foxglove,
-    jimsonweed,
-    hemlock,
-    oleander,
-    parnsnip,
-    nettle,
-    nightshade,
-    azalea,
-    mistletoe,
-    hogweed,
-    trumpet
-  );
-  console.log(cardArray);
-  cardArray = shuffle(cardArray);
-  activeCard = cardArray.shift();
-  console.log(activeCard);
-  topCard.style.backgroundImage = `url(${activeCard.img})`;
-  bottomCard.innerHTML = `${activeCard.name}`;
-  bottomCard.classList.add("hideCard");
-  topCard.classList.remove("hideCard");
-  prompter.innerText = "Be Careful...";
-}
-
 
 //click on picture in game board
 let cardDiv = document.querySelector(".cardDiv");
