@@ -123,6 +123,10 @@ textarea {
 }
 
 @media only screen and (max-width: 800px) {
+  .gameTitle {
+    font-size: 40px;
+    text-align: center;
+  }
   .cardDiv {
     height: 30vh;
     width: 80vw;
