@@ -12,12 +12,10 @@ bottomCard.classList.add("hideCard");
 let prompter = document.querySelector(".prompter");
 prompter.innerHTML = "Enter the Forest...";
 prompter.classList.add("green");
-//let input = document.querySelector("input");
-//input.addEventListener("submit", compareCards);
 let form = document.querySelector("form");
 form.addEventListener("submit", compareCards);
 let score = document.querySelector(".score");
-score.innerHTML = 0;
+
 bottomCard.innerHTML =
   "Enter your guess before you flip the card over or, you'll never leave.";
 bottomCard.classList.add("instructions");
@@ -63,6 +61,7 @@ function shuffle(cards) {
 
 function resetGame() {
   cardArray = [];
+  successArray = [];
   cardArray.push(
     ivy,
     oak,
@@ -89,48 +88,89 @@ function resetGame() {
   topCard.classList.remove("hideCard");
   prompter.innerText = "Be Careful...";
   bottomCard.classList.remove("instructions");
+  form.classList.remove("hideCard");
 }
 
 function displayTopCard() {
+  console.log(cardArray);
+  console.log(activeCard);
+  form.classList.toggle("hideCard");
+  prompter.classList.remove("red");
+  prompter.classList.add("green");
+  topCard.classList.remove("hideCard");
+  bottomCard.classList.add("hideCard");
   if (cardArray.length == 0) {
     resetGame();
   } else {
-    prompter.innerHTML = "Be Careful...";
+    if (prompter.innerHTML == "Safe!") {
+      shuffle(cardArray);
+      activeCard = cardArray.shift();
+      topCard.style.backgroundImage = `url(${activeCard.img})`;
+      bottomCard.innerHTML = `${activeCard.name}`;
+    } else {
+      prompter.innerText = "Be Careful...";
+      cardArray.push(activeCard);
+      shuffle(cardArray);
+      activeCard = cardArray.shift();
+      topCard.style.backgroundImage = `url(${activeCard.img})`;
+      bottomCard.innerHTML = `${activeCard.name}`;
+    }
+  }
+}
+/*(prompter.innerHTML = "Safe!")
     prompter.classList.remove("red");
     prompter.classList.add("green");
     topCard.classList.remove("hideCard");
     bottomCard.classList.add("hideCard");
-    cardArray.push(activeCard);
-    console.log(cardArray);
     shuffle(cardArray);
     activeCard = cardArray.shift();
-    console.log(activeCard);
     topCard.style.backgroundImage = `url(${activeCard.img})`;
     bottomCard.innerHTML = `${activeCard.name}`;
-  }
-}
+    */
 
 function flipCard() {
-  console.log("flip");
+  form.classList.toggle("hideCard");
+  //console.log("flip");
   bottomCard.classList.remove("hideCard");
   topCard.classList.add("hideCard");
 }
+//compareCards function
 let input = document.querySelector('input[type="text"]');
 function compareCards(e) {
   e.preventDefault();
   if (input.value == activeCard.name) {
     prompter.innerHTML = "Safe!";
-    console.log("you got it");
+    //console.log("you got it");
     prompter.classList.add("green");
     prompter.classList.remove("red");
+    successArray.push(activeCard);
+    let newScore = eval(score.innerText);
+    newScore += 1;
+    score.innerText = newScore;
+    console.log(successArray);
+    console.log(cardArray);
+    if (newScore === 14) {
+      gameOver();
+    } else {
+      //next
+      flipCard();
+    }
   } else {
     prompter.classList.add("red");
     prompter.classList.remove("green");
-    prompter.innerHTML = "Looks like you're in for a world of hurt.";
+    prompter.innerHTML = "You're in for a world of hurt.";
+    form.classList.toggle("hideCard");
+    bottomCard.classList.remove("hideCard");
+    topCard.classList.add("hideCard");
     console.log(
       "Looks like you need some calamine lotion for that dermatitis!"
     );
   }
+}
+function gameOver() {
+  console.log("game over");
+  prompter.innerHTML = "You've Escaped the Forest!";
+  score.innerHTML = 0;
 }
 
 //click on picture in game board
