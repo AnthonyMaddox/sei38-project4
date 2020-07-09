@@ -180,7 +180,7 @@ textarea {
     width: 80vw;
   }
   form {
-   margin-top: auto;
+   margin-top: 0px;
     display: flex;
   }
   .innerCardDiv {
