@@ -18,7 +18,8 @@ let form = document.querySelector("form");
 form.addEventListener("submit", compareCards);
 let score = document.querySelector(".score");
 score.innerHTML = 0;
-bottomCard.innerHTML = "Enter your guess before you flip the card over or, you'll never leave.";
+bottomCard.innerHTML =
+  "Enter your guess before you flip the card over or, you'll never leave.";
 bottomCard.classList.add("instructions");
 
 //Deck
@@ -33,7 +34,7 @@ class Flashcard {
 const ivy = new Flashcard("Poison Ivy", "imgs/ivy.jpg");
 const oak = new Flashcard("Poison Oak", "imgs/oak.jpg");
 const sumac = new Flashcard("Poison Sumac", "imgs/sumac.jpg");
-const foxglove = new Flashcard("Foxgolve", "imgs/foxglove.jpg");
+const foxglove = new Flashcard("Foxglove", "imgs/foxglove.jpg");
 const jimsonweed = new Flashcard("Jimsonweed", "imgs/jimsonweed.jpg");
 const hemlock = new Flashcard("Hemlock", "imgs/hemlock.jpg");
 const oleander = new Flashcard("Oleander", "imgs/oleander.jpg");
@@ -94,6 +95,9 @@ function displayTopCard() {
   if (cardArray.length == 0) {
     resetGame();
   } else {
+    prompter.innerHTML = "Be Careful...";
+    prompter.classList.remove("red");
+    prompter.classList.add("green");
     topCard.classList.remove("hideCard");
     bottomCard.classList.add("hideCard");
     cardArray.push(activeCard);
@@ -106,16 +110,6 @@ function displayTopCard() {
   }
 }
 
-function removeCard() {
-  cardArray.push(activeCard);
-  console.log(cardArray);
-  shuffle(cardArray);
-  activeCard = cardArray.shift();
-  console.log(activeCard);
-  topCard.style.backgroundImage = `url(${activeCard.img})`;
-  bottomCard.innerHTML = `${activeCard.name}`;
-}
-
 function flipCard() {
   console.log("flip");
   bottomCard.classList.remove("hideCard");
@@ -125,10 +119,17 @@ let input = document.querySelector('input[type="text"]');
 function compareCards(e) {
   e.preventDefault();
   if (input.value == activeCard.name) {
+    prompter.innerHTML = "Safe!";
     console.log("you got it");
-  }
-  else {
-   console.log("Looks like you need some calamine lotion for that dermatitis!");
+    prompter.classList.add("green");
+    prompter.classList.remove("red");
+  } else {
+    prompter.classList.add("red");
+    prompter.classList.remove("green");
+    prompter.innerHTML = "Looks like you're in for a world of hurt.";
+    console.log(
+      "Looks like you need some calamine lotion for that dermatitis!"
+    );
   }
 }
 
@@ -142,6 +143,17 @@ cardDiv.addEventListener("click", function (e) {
     displayTopCard();
   }
 });
+
+/*function removeCard() {
+  cardArray.push(activeCard);
+  console.log(cardArray);
+  shuffle(cardArray);
+  activeCard = cardArray.shift();
+  console.log(activeCard);
+  topCard.style.backgroundImage = `url(${activeCard.img})`;
+  bottomCard.innerHTML = `${activeCard.name}`;
+}
+*/
 
 //let input = document.querySelector('input')
 //form.addEventListener("keyup", checkCard);

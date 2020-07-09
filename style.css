@@ -31,13 +31,16 @@ form {
   font-size: 45px;
   text-align: center;
 }
+.prompter {
+   font-size: 23px;
+}
 .green {
   color: transparent;
   text-shadow: 0px 3px 3px rgba(76, 235, 103, 0.486);
 }
 .red {
   color: transparent;
-  text-shadow: 0px 3px 3px rgba(76, 235, 103, 0.486);
+  text-shadow: 0px 3px 3px rgba(255, 1, 1, 0.747);
 }
 /*card divs*/
 .cardDiv {
