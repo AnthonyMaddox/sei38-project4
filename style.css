@@ -32,7 +32,7 @@ form {
   text-align: center;
 }
 .prompter {
-   font-size: 23px;
+  font-size: 23px;
 }
 .green {
   color: transparent;
@@ -120,4 +120,26 @@ textarea {
   font-family: Arial, Helvetica, sans-serif;
   padding: 50px;
   font-size: 30px;
+}
+
+@media only screen and (max-width: 800px) {
+  .cardDiv {
+    height: 30vh;
+    width: 80vw;
+    background-image: url("imgs/trunk.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+  .bottomCard {
+    height: 30vh;
+    width: 80vw;
+    font-size: 18px;
+  }
+  .topCard {
+    height: 30vh;
+    width: 80vw;
+  }
+  form {
+    display: flex;
+  }
 }
