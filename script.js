@@ -15,7 +15,7 @@ prompter.classList.add("green");
 let form = document.querySelector("form");
 form.addEventListener("submit", compareCards);
 let score = document.querySelector(".score");
-
+let bottomP = document.querySelector(".bottomP");
 bottomCard.innerHTML =
   "Enter your guess before you flip the card over or, you'll never leave.";
 bottomCard.classList.add("instructions");
@@ -63,6 +63,7 @@ function shuffle(cards) {
 function resetGame() {
   cardArray = [];
   successArray = [];
+  bottomP.classList.add("hideCard");
   topCard.classList.remove("gameOver");
   topCard.innerHTML = "";
   score.innerHTML = 0;
@@ -143,6 +144,13 @@ function flipCard() {
 let input = document.querySelector('input[type="text"]');
 function compareCards(e) {
   e.preventDefault();
+  if (input.value == "") {
+    if (bottomCard.classList.contains("hideCard")) {
+      flipCard();
+    } else {
+      displayTopCard();
+    }
+  }
   if (input.value == activeCard.name) {
     prompter.innerHTML = "Safe!";
     //console.log("you got it");
@@ -154,7 +162,7 @@ function compareCards(e) {
     score.innerText = newScore;
     console.log(successArray);
     console.log(cardArray);
-    
+
     if (newScore === 14) {
       gameOver();
     } else {
@@ -193,6 +201,28 @@ cardDiv.addEventListener("click", function (e) {
     displayTopCard();
   }
 });
+/*let body = document.querySelector('body')
+body.addEventListener('submit', function(e){
+   e.preventDefault();
+   if (bottomCard.classList.contains("hideCard")) {
+     flipCard();
+   } else {
+     displayTopCard();
+   }
+ });
+ */
+
+document.body.onkeydown = function (e) {
+  e = e || window.e;
+  let keycode = e.charCode || e.keyCode;
+  if (keycode === 39) {
+    if (bottomCard.classList.contains("hideCard")) {
+      flipCard();
+    } else {
+      displayTopCard();
+    }
+  }
+};
 
 /*function removeCard() {
   cardArray.push(activeCard);

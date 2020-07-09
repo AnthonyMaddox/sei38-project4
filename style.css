@@ -62,6 +62,7 @@ form {
 
 .innerCardDiv {
   position: absolute;
+  backface-visibility: hidden;
   height: 35vh;
   width: 70vw;
   transform-style: preserve-3d;
@@ -79,7 +80,6 @@ form {
 .bottomCard {
   position: absolute;
   display: flex;
-  backface-visibility: hidden;
   justify-content: center;
   align-items: center;
   background-color: rgb(0, 0, 0);
@@ -149,6 +149,14 @@ textarea {
   font-family: Arial, Helvetica, sans-serif;
   padding: 50px;
   font-size: 30px;
+}
+.bottomP {
+  color: rgb(241, 241, 241);
+  text-align: center;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
+    0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18;
+  font-family: "Roboto", sans-serif;
+  padding: 20px 30% 0 30%;
 }
 
 @media only screen and (max-width: 700px) {
