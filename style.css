@@ -59,7 +59,7 @@ form {
 .cardDiv:active {
   transform: rotateY(180deg);
 }
-/*need transform on keypress*/ 
+/*need transform on keypress*/
 
 .innerCardDiv {
   position: absolute;
@@ -180,14 +180,18 @@ textarea {
     width: 80vw;
   }
   form {
-   margin-top: 0px;
+    margin-top: 0px;
     display: flex;
   }
   .innerCardDiv {
     height: 30vh;
     width: 80vw;
   }
+  .bottomP {
+    padding-top: 5px;
+  }
 }
+
 @media only screen and (min-width: 1000px) {
   .cardDiv {
     height: 50vh;
