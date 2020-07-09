@@ -20,8 +20,8 @@ form {
   color: #ffffff;
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
     0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18;
-  font-family: "Fondamento", cursive;
-  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
 }
 .gameTitle {
   color: #ffffff;
@@ -42,26 +42,49 @@ form {
   color: transparent;
   text-shadow: 0px 3px 3px rgba(255, 1, 1, 0.747);
 }
-/*game over div*/
 
 /*card divs*/
+
 .cardDiv {
-  height: 30vh;
-  width: 60vw;
+  position: relative;
+  height: 35vh;
+  width: 70vw;
   background-image: url("imgs/trunk.jpg");
   background-position: center;
   background-size: cover;
-  perspective: 1000px;
+  /*perspective: 1000px;*/
   box-shadow: -10px 0px 40px -7px #195817, 10px 0px 40px -7px #125024,
     5px 5px 15px 5px rgba(134, 31, 31, 0.171);
 }
+.cardDiv:active {
+  transform: rotateY(180deg);
+}
+
+.innerCardDiv {
+  position: absolute;
+  height: 35vh;
+  width: 70vw;
+  transform-style: preserve-3d;
+  transition: all 0.7s ease;
+}
+.topCard {
+  position: absolute;
+  backface-visibility: hidden;
+  background-color: transparent;
+  height: 35vh;
+  width: 70vw;
+  background-position: center;
+  background-size: cover;
+}
 .bottomCard {
+  position: absolute;
   display: flex;
+  backface-visibility: hidden;
   justify-content: center;
   align-items: center;
   background-color: rgb(0, 0, 0);
-  height: 30vh;
-  width: 60vw;
+  height: 35vh;
+  width: 70vw;
   font-family: "Fondamento", cursive;
   font-size: 30px;
   color: #1f8f00;
@@ -72,25 +95,19 @@ form {
     14px 0 30px #6a8000, 15px 2px 30px rgba(64, 77, 0, 0.5), 15px 0 45px #80ff00,
     17px 0 45px #408000, 17px 2px 45px rgba(38, 77, 0, 0.5);
 }
-.topCard {
-  background-color: transparent;
-  height: 30vh;
-  width: 60vw;
-  background-position: center;
-  background-size: cover;
-}
+
 .hideCard {
   display: none;
 }
 .gameOver {
-   color: white;
-   font-family: Arial, Helvetica, sans-serif;
-   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
     0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18;
-   font-size: 30px;
-   display: flex;
-   justify-content: center;
-   align-items: center;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*.displayCard {
@@ -118,23 +135,23 @@ label {
 input,
 select,
 textarea {
-  font-family: inherit;
+  font-family: "Fondamento", cursive;
   font-size: 100%;
   padding: 5px 20px 5px 20px;
-  color: rgb(255, 255, 255);
+  color: rgb(245, 245, 245);
   background-color: rgb(0, 70, 23);
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
     0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18;
   outline: none;
 }
 .instructions {
-  color: white;
+  color: rgb(236, 236, 236);
   font-family: Arial, Helvetica, sans-serif;
   padding: 50px;
   font-size: 30px;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 700px) {
   .gameTitle {
     font-size: 40px;
     text-align: center;
@@ -142,14 +159,11 @@ textarea {
   .cardDiv {
     height: 30vh;
     width: 80vw;
-    background-image: url("imgs/trunk.jpg");
-    background-position: center;
-    background-size: cover;
   }
   .bottomCard {
     height: 30vh;
     width: 80vw;
-    font-size: 18px;
+    font-size: 21px;
   }
   .topCard {
     height: 30vh;
@@ -157,5 +171,51 @@ textarea {
   }
   form {
     display: flex;
+  }
+  .innerCardDiv {
+    height: 30vh;
+    width: 80vw;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  .cardDiv {
+    height: 50vh;
+    width: 70vw;
+  }
+  .bottomCard {
+    height: 50vh;
+    width: 70vw;
+    font-size: 40px;
+  }
+  .topCard {
+    height: 50vh;
+    width: 70vw;
+  }
+  .innerCardDiv {
+    height: 50vh;
+    width: 70vw;
+  }
+  .gameTitle {
+    font-size: 60px;
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .cardDiv {
+    height: 45vh;
+    width: 60vw;
+  }
+  .bottomCard {
+    height: 45vh;
+    width: 60vw;
+    font-size: 40px;
+  }
+  .topCard {
+    height: 45vh;
+    width: 60vw;
+  }
+  .innerCardDiv {
+    height: 45vh;
+    width: 60vw;
   }
 }

@@ -98,6 +98,7 @@ function resetGame() {
 function displayTopCard() {
   console.log(cardArray);
   console.log(activeCard);
+  input.value = "";
   form.classList.toggle("hideCard");
   prompter.classList.remove("red");
   prompter.classList.add("green");
@@ -153,7 +154,7 @@ function compareCards(e) {
     score.innerText = newScore;
     console.log(successArray);
     console.log(cardArray);
-    input.value = "";
+    
     if (newScore === 14) {
       gameOver();
     } else {
