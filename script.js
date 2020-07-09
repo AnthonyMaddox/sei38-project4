@@ -43,6 +43,7 @@ const azalea = new Flashcard("Azalea", "imgs/azalea.jpg");
 const mistletoe = new Flashcard("Mistletoe", "imgs/mistletoe.jpg");
 const hogweed = new Flashcard("Hogweed", "imgs/hogweed.jpg");
 const trumpet = new Flashcard("Trumpet Flower", "imgs/trumpet.jpg");
+const gameOverCard = new Flashcard("Game Over", "deckTop.jpg");
 
 //Fisher-Yates Shuffle found@ https://www.frankmitchell.org/2015/01/fisher-yates/
 function shuffle(cards) {
@@ -62,6 +63,9 @@ function shuffle(cards) {
 function resetGame() {
   cardArray = [];
   successArray = [];
+  topCard.classList.remove("gameOver");
+  topCard.innerHTML = "";
+  score.innerHTML = 0;
   cardArray.push(
     ivy,
     oak,
@@ -113,7 +117,7 @@ function displayTopCard() {
       shuffle(cardArray);
       activeCard = cardArray.shift();
       topCard.style.backgroundImage = `url(${activeCard.img})`;
-      bottomCard.innerHTML = `${activeCard.name}`;
+      bottomCard.innerHTML = activeCard.name;
     }
   }
 }
@@ -168,10 +172,13 @@ function compareCards(e) {
     );
   }
 }
+//game over function
+let innerCardDiv = document.querySelector(".innerCardDiv");
 function gameOver() {
   console.log("game over");
   prompter.innerHTML = "You've Escaped the Forest!";
-  score.innerHTML = 0;
+  topCard.style.backgroundImage = `url(${gameOverCard.img})`;
+  topCard.innerHTML = `${gameOverCard.name}`;
   topCard.classList.add("gameOver");
 }
 
