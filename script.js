@@ -144,13 +144,6 @@ function flipCard() {
 let input = document.querySelector('input[type="text"]');
 function compareCards(e) {
   e.preventDefault();
-  if (input.value == "") {
-    if (bottomCard.classList.contains("hideCard")) {
-      flipCard();
-    } else {
-      displayTopCard();
-    }
-  }
   if (input.value == activeCard.name) {
     prompter.innerHTML = "Safe!";
     //console.log("you got it");
