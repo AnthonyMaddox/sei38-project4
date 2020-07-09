@@ -93,14 +93,14 @@ function resetGame() {
   topCard.classList.remove("hideCard");
   prompter.innerText = "Be Careful...";
   bottomCard.classList.remove("instructions");
-  form.classList.remove("hideCard");
+  form.classList.remove("hideForm");
 }
 
 function displayTopCard() {
   console.log(cardArray);
   console.log(activeCard);
   input.value = "";
-  form.classList.toggle("hideCard");
+  form.classList.toggle("hideForm");
   prompter.classList.remove("red");
   prompter.classList.add("green");
   topCard.classList.remove("hideCard");
@@ -135,7 +135,7 @@ function displayTopCard() {
     */
 
 function flipCard() {
-  form.classList.toggle("hideCard");
+  form.classList.toggle("hideForm");
   //console.log("flip");
   bottomCard.classList.remove("hideCard");
   topCard.classList.add("hideCard");

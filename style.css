@@ -46,28 +46,28 @@ form {
 /*card divs*/
 
 .cardDiv {
+  perspective: 1000px;
   position: relative;
   height: 35vh;
   width: 70vw;
   background-image: url("imgs/trunk.jpg");
   background-position: center;
   background-size: cover;
-  /*perspective: 1000px;*/
   box-shadow: -10px 0px 40px -7px #195817, 10px 0px 40px -7px #125024,
     5px 5px 15px 5px rgba(134, 31, 31, 0.171);
 }
-.cardDiv:active {
-  transform: rotateY(180deg);
-}
+
 /*need transform on keypress*/
 
 .innerCardDiv {
   position: absolute;
-  backface-visibility: hidden;
   height: 35vh;
   width: 70vw;
   transform-style: preserve-3d;
-  transition: all 0.7s ease;
+  transition: all 0.4s ease;
+}
+.innerCardDiv:active {
+  transform: rotateY(180deg);
 }
 .topCard {
   position: absolute;
@@ -100,6 +100,9 @@ form {
 
 .hideCard {
   opacity: 0;
+}
+.hideForm {
+  display: none;
 }
 .gameOver {
   color: white;
