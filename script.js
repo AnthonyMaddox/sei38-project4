@@ -101,6 +101,7 @@ function displayTopCard() {
   console.log(activeCard);
   input.value = "";
   form.classList.toggle("hideForm");
+  input.focus();
   prompter.classList.remove("red");
   prompter.classList.add("green");
   topCard.classList.remove("hideCard");
@@ -142,6 +143,7 @@ function flipCard() {
 }
 //compareCards function
 let input = document.querySelector('input[type="text"]');
+
 function compareCards(e) {
   e.preventDefault();
   if (input.value == activeCard.name) {
@@ -153,9 +155,6 @@ function compareCards(e) {
     let newScore = eval(score.innerText);
     newScore += 1;
     score.innerText = newScore;
-    console.log(successArray);
-    console.log(cardArray);
-
     if (newScore === 14) {
       gameOver();
     } else {

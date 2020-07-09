@@ -120,7 +120,9 @@ form {
    display: block;
  }
  */
-
+ #inputField {
+    text-transform: capitalize;
+ }
 /* form and bottom input/button */
 .resetBtn {
   margin-top: 15px;
