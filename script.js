@@ -166,12 +166,9 @@ function compareCards(e) {
     prompter.classList.add("red");
     prompter.classList.remove("green");
     prompter.innerHTML = "You're in for a world of hurt.";
-    form.classList.toggle("hideCard");
+    form.classList.add("hideForm");
     bottomCard.classList.remove("hideCard");
     topCard.classList.add("hideCard");
-    console.log(
-      "Looks like you need some calamine lotion for that dermatitis!"
-    );
   }
 }
 //game over function
