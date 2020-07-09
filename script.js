@@ -149,6 +149,7 @@ function compareCards(e) {
     score.innerText = newScore;
     console.log(successArray);
     console.log(cardArray);
+    input.value = "";
     if (newScore === 14) {
       gameOver();
     } else {
@@ -171,6 +172,7 @@ function gameOver() {
   console.log("game over");
   prompter.innerHTML = "You've Escaped the Forest!";
   score.innerHTML = 0;
+  topCard.classList.add("gameOver");
 }
 
 //click on picture in game board
