@@ -55,6 +55,7 @@ form {
   background-size: cover;
   box-shadow: -10px 0px 40px -7px #195817, 10px 0px 40px -7px #125024,
     5px 5px 15px 5px rgba(134, 31, 31, 0.171);
+    cursor: pointer;
 }
 
 /*need transform on keypress*/
@@ -92,11 +93,11 @@ form {
   font-size: 30px;
   font-weight: bolder;
   color: #125200;
-  text-shadow: 3px 0 3px #a7a7a7, 5px 0 3px #646464,
+  text-shadow: 3px 0 3px #a7a7a7, 5px 0 3px #a3a3a3,
     6px 2px 3px rgba(161, 161, 161, 0.5), 6px 0 9px #a0a0a0, 8px 0 9px #adadad,
-    9px 2px 9px rgba(150, 150, 150, 0.5), 9px 0 18px #808080,
+    9px 2px 9px rgba(185, 185, 185, 0.5), 9px 0 18px #b3b3b3,
     11px 0 18px #008a17, 12px 2px 18px rgba(77, 66, 0, 0.5), 12px 0 30px #bebebe,
-    14px 0 30px #6a8000, 15px 2px 30px rgba(64, 77, 0, 0.5), 15px 0 45px #80ff00,
+    14px 0 30px #6a8000, 15px 2px 30px rgba(9, 77, 0, 0.5), 15px 0 45px #80ff00,
     17px 0 45px #408000, 17px 2px 45px rgba(38, 77, 0, 0.5);
 }
 
@@ -117,13 +118,6 @@ form {
   align-items: center;
 }
 
-/*.displayCard {
-   display: block;
- }
- */
-#inputField {
-  text-transform: capitalize;
-}
 /* form and bottom input/button */
 .resetBtn {
   margin-top: 15px;
@@ -152,6 +146,9 @@ textarea {
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
     0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18;
   outline: none;
+}
+input[type=submit] {
+   cursor: pointer;
 }
 .instructions {
   color: rgb(236, 236, 236);

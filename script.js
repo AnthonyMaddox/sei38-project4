@@ -32,7 +32,8 @@ cardDiv.addEventListener("click", function (e) {
   }
 });
 
-document.body.onkeydown = function (e) {
+let body = document.querySelector("body");
+body.addEventListener("keydown", function (e) {
   e = e || window.e;
   let keycode = e.charCode || e.keyCode;
   if (keycode === 39) {
@@ -42,7 +43,7 @@ document.body.onkeydown = function (e) {
       displayTopCard();
     }
   }
-};
+});
 
 //Deck
 
@@ -86,7 +87,7 @@ function shuffle(cards) {
 function resetGame() {
   cardArray = [];
   successArray = [];
-  bottomP.classList.add("hideCard");
+  bottomP.classList.add("hideForm");
   topCard.classList.remove("gameOver");
   topCard.innerHTML = "";
   score.innerHTML = 0;
@@ -124,7 +125,8 @@ function displayTopCard() {
   console.log(activeCard);
   console.log(cardArray);
   input.value = "";
-  input.focus();
+  //cardDiv.focus();
+  //input.focus();
   form.classList.toggle("hideForm");
   prompter.classList.remove("red");
   prompter.classList.add("green");
