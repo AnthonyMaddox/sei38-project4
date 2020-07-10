@@ -1,18 +1,15 @@
 # README
 
 ### Contents
-
 ###### About
-
 ###### Requirements
-
 ###### The Mars Rover
-
 ###### Instructions
+###### Credits
 
 ## About
 
-###### This repository is a javscript project. It was designed for the General Assembly Software Engineering Immersive program. This application tests the user on their knowledge of poisonous plants.
+###### This repository is a full stack flashcard game powered by javascript, css and html. It was designed for the General Assembly Software Engineering Immersive program. This application tests the user on their knowledge of poisonous plants.
 
 ## Requirements
 
@@ -30,4 +27,8 @@
 
 ###### After loading the page, 'click' or 'tap' on the middle picture, or 'press' the right arrow key to enter the forest and start testing your knowledge of poisonous plants. Enter your guess before flipping over the next card or you'll never leave.... Guess all 14 poisonous plants correctly and you will escape the forest! 
 
-#### For more information on poisonous plants visit: https://api.nasa.gov/
+## Credits 
+
+###### Picture were borrowed from the WebMd website slideshow on poisonous plants, pixabay, unsplash and pexels. All programming knowledge was gained while under the study of Noah Clark and Roger Campbell at General Assembly.
+
+#### For more information on poisonous plants visit: https://www.webmd.com/skin-problems-and-treatments/ss/slideshow-poison-plants-guide

@@ -123,7 +123,7 @@ form {
 
 /* form and bottom input/button */
 .resetBtn {
-  margin-top: 15px;
+  margin-top: 10px;
   padding: 10px 20px 10px 20px;
   background-color: rgba(21, 114, 61, 0.664);
   color: springgreen;
@@ -165,10 +165,15 @@ input[type="submit"] {
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
     0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18;
   font-family: "Roboto", sans-serif;
-  padding: 10px 10% 0 10%;
+  width: 300px;
+  line-height: 20px;
+}
+.webmd-link {
+  color: black;
+  text-decoration: none;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 600px) {
   .gameTitle {
     font-size: 40px;
     text-align: center;
@@ -196,6 +201,9 @@ input[type="submit"] {
   }
   .bottomP {
     padding-top: 5px;
+  }
+  .resetBtn {
+    margin-bottom: -20px;
   }
 }
 

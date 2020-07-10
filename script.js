@@ -20,6 +20,7 @@ let score = document.querySelector(".score");
 let resetBtn = document.querySelector(".resetBtn");
 resetBtn.addEventListener("click", resetGame);
 let bottomP = document.querySelector(".bottomP");
+let wmdPara = document.querySelector("#webmd-para");
 bottomCard.innerHTML =
   "Enter your guess before you flip the card over or, you'll never leave.";
 bottomCard.classList.add("instructions");
@@ -34,7 +35,19 @@ cardDiv.addEventListener("click", function (e) {
     displayTopCard();
   }
 });
+
 body.addEventListener("keydown", function (e) {
+  let keycode = e.charCode || e.keyCode;
+  if (keycode === 39) {
+    //e = e || window.e;
+    if (bottomCard.classList.contains("hideCard")) {
+      flipCard();
+    } else {
+      displayTopCard();
+    }
+  }
+});
+/*body.addEventListener("keydown", function (e) {
   let keycode = e.charCode || e.keyCode;
   if (keycode === 39) {
     if (document.setActive) {
@@ -48,17 +61,7 @@ body.addEventListener("keydown", function (e) {
     }
   }
 });
-body.addEventListener("keydown", function (e) {
-  let keycode = e.charCode || e.keyCode;
-  if (keycode === 39) {
-    //e = e || window.e;
-    if (bottomCard.classList.contains("hideCard")) {
-      flipCard();
-    } else {
-      displayTopCard();
-    }
-  }
-});
+*/
 
 //Deck
 
@@ -103,6 +106,7 @@ function resetGame() {
   cardArray = [];
   successArray = [];
   input.value = "";
+  wmdPara.classList.add("hideCard");
   bottomP.classList.add("hideForm");
   topCard.classList.remove("gameOver");
   topCard.innerHTML = "";
@@ -203,7 +207,7 @@ function compareCards(e) {
 //game over function
 
 function gameOver() {
-  console.log("You Escaped the Forest!");
+  wmdPara.classList.remove("hideCard");
   prompter.innerHTML = "Don't forget what you learned.";
   topCard.style.backgroundImage = `url(${gameOverCard.img})`;
   topCard.innerHTML = `${gameOverCard.name}`;
