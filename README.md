@@ -12,22 +12,22 @@
 
 ## About
 
-###### This repository is a javscript project. It was designed for the General Assembly Software Engineering Immersive program. This application tests the user on their knowledge of poisonois plants.
+###### This repository is a javscript project. It was designed for the General Assembly Software Engineering Immersive program. This application tests the user on their knowledge of poisonous plants.
 
 ## Requirements
 
-###### All you need is a phone, tablet or computer with mouse and a browser installed.
+###### All you need is a phone, tablet or computer with a mouse and browser installed.
 
 #### Recommended:
 
-###### Apple computer/Google Chrome
+###### Iphone/Tablet
 
-## The Mars Rover
+## Poisonous Plants
 
-###### The main goals of NASA's Mars Rover are to determine whether life arose on Mars, characterize the climate and geology of Mars and prave the way for human exploration.
+###### Poisonous plants trigger a variety of allergic reactions to humans from mild dermatitis to unbearable blistering and serious internal damage if ingested. We all are susceptible to varying degrees. It is important to be aware of whats out there and what affects you personally. 
 
 ## Instructions
 
-###### Click on the hamburger menu in the upper-right corner of your screen. Click on any of the cameras to generate an image that they have taken. Click on 'Rover Camera Info' to learn more about the Mars Rover cameras.
+###### After loading the page, 'click' or 'tap' on the middle picture, or 'press' the right arrow key to enter the forest and start testing your knowledge of poisonous plants. Enter your guess before flipping over the next card or you'll never leave.... Guess all 14 poisonous plants correctly and you will escape the forest! 
 
-#### For more information on the NASA API portal visit https://api.nasa.gov/
+#### For more information on poisonous plants visit: https://api.nasa.gov/

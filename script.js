@@ -4,8 +4,9 @@
 let cardArray = [];
 let successArray = [];
 let activeCard = {};
-let resetBtn = document.querySelector(".resetBtn");
-resetBtn.addEventListener("click", resetGame);
+let body = document.querySelector("body");
+let cardDiv = document.querySelector(".cardDiv");
+let innerCardDiv = document.querySelector(".innerCardDiv");
 let topCard = document.querySelector(".topCard");
 let bottomCard = document.querySelector(".bottomCard");
 bottomCard.classList.add("hideCard");
@@ -16,13 +17,15 @@ let form = document.querySelector("form");
 let input = document.querySelector('input[type="text"]');
 form.addEventListener("submit", compareCards);
 let score = document.querySelector(".score");
+let resetBtn = document.querySelector(".resetBtn");
+resetBtn.addEventListener("click", resetGame);
 let bottomP = document.querySelector(".bottomP");
 bottomCard.innerHTML =
   "Enter your guess before you flip the card over or, you'll never leave.";
 bottomCard.classList.add("instructions");
 
 //click on picture or right key down to flip card
-let cardDiv = document.querySelector(".cardDiv");
+
 cardDiv.addEventListener("click", function (e) {
   e.preventDefault();
   if (bottomCard.classList.contains("hideCard")) {
@@ -31,12 +34,24 @@ cardDiv.addEventListener("click", function (e) {
     displayTopCard();
   }
 });
-
-let body = document.querySelector("body");
 body.addEventListener("keydown", function (e) {
-  e = e || window.e;
   let keycode = e.charCode || e.keyCode;
   if (keycode === 39) {
+    if (document.setActive) {
+      cardDiv.setActive();
+    } else {
+      if (document.focus) {
+        cardDiv.focus();
+      } else {
+        console.log("something is wrong");
+      }
+    }
+  }
+});
+body.addEventListener("keydown", function (e) {
+  let keycode = e.charCode || e.keyCode;
+  if (keycode === 39) {
+    //e = e || window.e;
     if (bottomCard.classList.contains("hideCard")) {
       flipCard();
     } else {
@@ -67,7 +82,7 @@ const azalea = new Flashcard("Azalea", "imgs/azalea.jpg");
 const mistletoe = new Flashcard("Mistletoe", "imgs/mistletoe.jpg");
 const hogweed = new Flashcard("Hogweed", "imgs/hogweed.jpg");
 const trumpet = new Flashcard("Trumpet Flower", "imgs/trumpet.jpg");
-const gameOverCard = new Flashcard("Game Over", "deckTop.jpg");
+const gameOverCard = new Flashcard("You Escaped the Forest!", "deckTop.jpg");
 
 //Fisher-Yates Shuffle found@ https://www.frankmitchell.org/2015/01/fisher-yates/
 function shuffle(cards) {
@@ -87,10 +102,12 @@ function shuffle(cards) {
 function resetGame() {
   cardArray = [];
   successArray = [];
+  input.value = "";
   bottomP.classList.add("hideForm");
   topCard.classList.remove("gameOver");
   topCard.innerHTML = "";
   score.innerHTML = 0;
+  //cardDiv.style.backgroundImage = 'none'
   cardArray.push(
     ivy,
     oak,
@@ -126,7 +143,7 @@ function displayTopCard() {
   console.log(cardArray);
   input.value = "";
   //cardDiv.focus();
-  //input.focus();
+  input.focus();
   form.classList.toggle("hideForm");
   prompter.classList.remove("red");
   prompter.classList.add("green");
@@ -185,10 +202,9 @@ function compareCards(e) {
 }
 //game over function
 
-let innerCardDiv = document.querySelector(".innerCardDiv");
 function gameOver() {
-  console.log("game over");
-  prompter.innerHTML = "You've Escaped the Forest!";
+  console.log("You Escaped the Forest!");
+  prompter.innerHTML = "Don't forget what you learned.";
   topCard.style.backgroundImage = `url(${gameOverCard.img})`;
   topCard.innerHTML = `${gameOverCard.name}`;
   topCard.classList.add("gameOver");
