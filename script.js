@@ -124,8 +124,8 @@ function displayTopCard() {
   console.log(activeCard);
   console.log(cardArray);
   input.value = "";
-  form.classList.toggle("hideForm");
   input.focus();
+  form.classList.toggle("hideForm");
   prompter.classList.remove("red");
   prompter.classList.add("green");
   topCard.classList.remove("hideCard");

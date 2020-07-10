@@ -90,9 +90,10 @@ form {
   width: 70vw;
   font-family: "Fondamento", cursive;
   font-size: 30px;
-  color: #1f8f00;
-  text-shadow: 3px 0 3px #5f5f5f, 5px 0 3px #646464,
-    6px 2px 3px rgba(117, 117, 117, 0.5), 6px 0 9px #757575, 8px 0 9px #7e7e7e,
+  font-weight: bolder;
+  color: #125200;
+  text-shadow: 3px 0 3px #a7a7a7, 5px 0 3px #646464,
+    6px 2px 3px rgba(161, 161, 161, 0.5), 6px 0 9px #a0a0a0, 8px 0 9px #adadad,
     9px 2px 9px rgba(150, 150, 150, 0.5), 9px 0 18px #808080,
     11px 0 18px #008a17, 12px 2px 18px rgba(77, 66, 0, 0.5), 12px 0 30px #bebebe,
     14px 0 30px #6a8000, 15px 2px 30px rgba(64, 77, 0, 0.5), 15px 0 45px #80ff00,
