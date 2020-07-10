@@ -14,7 +14,7 @@
 
 ## About
 
-###### This repository is a full stack flashcard game powered by javascript, css and html. It was designed for the General Assembly Software Engineering Immersive program. This application tests the user on their knowledge of poisonous plants.
+###### This repository is a flashcard game powered by javascript, css and html. It was designed for the General Assembly Software Engineering Immersive program. This application tests the user on their knowledge of poisonous plants.
 
 ## Requirements
 

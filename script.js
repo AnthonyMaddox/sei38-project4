@@ -1,5 +1,6 @@
 //start building some things on the page with js so you can feel having access to them...
 //pics from https://www.webmd.com/skin-problems-and-treatments/ss/slideshow-poison-plants-guide
+/*need flip animation on keypress*/
 
 let cardArray = [];
 let successArray = [];
@@ -47,21 +48,6 @@ body.addEventListener("keydown", function (e) {
     }
   }
 });
-/*body.addEventListener("keydown", function (e) {
-  let keycode = e.charCode || e.keyCode;
-  if (keycode === 39) {
-    if (document.setActive) {
-      cardDiv.setActive();
-    } else {
-      if (document.focus) {
-        cardDiv.focus();
-      } else {
-        console.log("something is wrong");
-      }
-    }
-  }
-});
-*/
 
 //Deck
 
@@ -214,3 +200,19 @@ function gameOver() {
   topCard.classList.add("gameOver");
   input.value = "";
 }
+
+/*body.addEventListener("keydown", function (e) {
+  let keycode = e.charCode || e.keyCode;
+  if (keycode === 39) {
+    if (document.setActive) {
+      cardDiv.setActive();
+    } else {
+      if (document.focus) {
+        cardDiv.focus();
+      } else {
+        console.log("something is wrong");
+      }
+    }
+  }
+});
+*/

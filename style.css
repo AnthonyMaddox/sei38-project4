@@ -60,8 +60,6 @@ form {
   cursor: pointer;
 }
 
-/*need transform on keypress*/
-
 .innerCardDiv {
   position: absolute;
   height: 35vh;
@@ -75,7 +73,6 @@ form {
 .topCard {
   position: absolute;
   backface-visibility: hidden;
-  background-color: transparent;
   height: 35vh;
   width: 70vw;
   background-position: center;
