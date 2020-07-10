@@ -120,9 +120,9 @@ form {
    display: block;
  }
  */
- #inputField {
-    text-transform: capitalize;
- }
+#inputField {
+  text-transform: capitalize;
+}
 /* form and bottom input/button */
 .resetBtn {
   margin-top: 15px;
@@ -164,7 +164,7 @@ textarea {
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
     0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18;
   font-family: "Roboto", sans-serif;
-  padding: 20px 30% 0 30%;
+  padding: 20px 25% 0 25%;
 }
 
 @media only screen and (max-width: 700px) {

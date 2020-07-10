@@ -13,12 +13,36 @@ let prompter = document.querySelector(".prompter");
 prompter.innerHTML = "Enter the Forest...";
 prompter.classList.add("green");
 let form = document.querySelector("form");
+let input = document.querySelector('input[type="text"]');
 form.addEventListener("submit", compareCards);
 let score = document.querySelector(".score");
 let bottomP = document.querySelector(".bottomP");
 bottomCard.innerHTML =
   "Enter your guess before you flip the card over or, you'll never leave.";
 bottomCard.classList.add("instructions");
+
+//click on picture or right key down to flip card
+let cardDiv = document.querySelector(".cardDiv");
+cardDiv.addEventListener("click", function (e) {
+  e.preventDefault();
+  if (bottomCard.classList.contains("hideCard")) {
+    flipCard();
+  } else {
+    displayTopCard();
+  }
+});
+
+document.body.onkeydown = function (e) {
+  e = e || window.e;
+  let keycode = e.charCode || e.keyCode;
+  if (keycode === 39) {
+    if (bottomCard.classList.contains("hideCard")) {
+      flipCard();
+    } else {
+      displayTopCard();
+    }
+  }
+};
 
 //Deck
 
@@ -28,7 +52,6 @@ class Flashcard {
     this.img = img;
   }
 }
-
 const ivy = new Flashcard("Poison Ivy", "imgs/ivy.jpg");
 const oak = new Flashcard("Poison Oak", "imgs/oak.jpg");
 const sumac = new Flashcard("Poison Sumac", "imgs/sumac.jpg");
@@ -58,7 +81,7 @@ function shuffle(cards) {
   return cards;
 }
 
-//functions
+//resetGame function
 
 function resetGame() {
   cardArray = [];
@@ -86,7 +109,6 @@ function resetGame() {
   console.log(cardArray);
   cardArray = shuffle(cardArray);
   activeCard = cardArray.shift();
-  console.log(activeCard);
   topCard.style.backgroundImage = `url(${activeCard.img})`;
   bottomCard.innerHTML = `${activeCard.name}`;
   bottomCard.classList.add("hideCard");
@@ -96,9 +118,11 @@ function resetGame() {
   form.classList.remove("hideForm");
 }
 
+//displayTopCard and flip functions
+
 function displayTopCard() {
-  console.log(cardArray);
   console.log(activeCard);
+  console.log(cardArray);
   input.value = "";
   form.classList.toggle("hideForm");
   input.focus();
@@ -124,41 +148,28 @@ function displayTopCard() {
     }
   }
 }
-/*(prompter.innerHTML = "Safe!")
-    prompter.classList.remove("red");
-    prompter.classList.add("green");
-    topCard.classList.remove("hideCard");
-    bottomCard.classList.add("hideCard");
-    shuffle(cardArray);
-    activeCard = cardArray.shift();
-    topCard.style.backgroundImage = `url(${activeCard.img})`;
-    bottomCard.innerHTML = `${activeCard.name}`;
-    */
 
 function flipCard() {
   form.classList.toggle("hideForm");
-  //console.log("flip");
   bottomCard.classList.remove("hideCard");
   topCard.classList.add("hideCard");
 }
 //compareCards function
-let input = document.querySelector('input[type="text"]');
 
 function compareCards(e) {
+  input.value = input.value.charAt(0).toUpperCase() + input.value.slice(1);
   e.preventDefault();
   if (input.value == activeCard.name) {
-    prompter.innerHTML = "Safe!";
-    //console.log("you got it");
-    prompter.classList.add("green");
-    prompter.classList.remove("red");
-    successArray.push(activeCard);
     let newScore = eval(score.innerText);
     newScore += 1;
     score.innerText = newScore;
+    prompter.innerHTML = "Safe!";
+    prompter.classList.add("green");
+    prompter.classList.remove("red");
+    successArray.push(activeCard);
     if (newScore === 14) {
       gameOver();
     } else {
-      //next
       flipCard();
     }
   } else {
@@ -171,6 +182,7 @@ function compareCards(e) {
   }
 }
 //game over function
+
 let innerCardDiv = document.querySelector(".innerCardDiv");
 function gameOver() {
   console.log("game over");
@@ -178,79 +190,5 @@ function gameOver() {
   topCard.style.backgroundImage = `url(${gameOverCard.img})`;
   topCard.innerHTML = `${gameOverCard.name}`;
   topCard.classList.add("gameOver");
+  input.value = "";
 }
-
-//click on picture in game board
-let cardDiv = document.querySelector(".cardDiv");
-cardDiv.addEventListener("click", function (e) {
-  e.preventDefault();
-  if (bottomCard.classList.contains("hideCard")) {
-    flipCard();
-  } else {
-    displayTopCard();
-  }
-});
-/*let body = document.querySelector('body')
-body.addEventListener('submit', function(e){
-   e.preventDefault();
-   if (bottomCard.classList.contains("hideCard")) {
-     flipCard();
-   } else {
-     displayTopCard();
-   }
- });
- */
-
-document.body.onkeydown = function (e) {
-  e = e || window.e;
-  let keycode = e.charCode || e.keyCode;
-  if (keycode === 39) {
-    if (bottomCard.classList.contains("hideCard")) {
-      flipCard();
-    } else {
-      displayTopCard();
-    }
-  }
-};
-
-/*function removeCard() {
-  cardArray.push(activeCard);
-  console.log(cardArray);
-  shuffle(cardArray);
-  activeCard = cardArray.shift();
-  console.log(activeCard);
-  topCard.style.backgroundImage = `url(${activeCard.img})`;
-  bottomCard.innerHTML = `${activeCard.name}`;
-}
-*/
-
-//let input = document.querySelector('input')
-//form.addEventListener("keyup", checkCard);
-//form.addEventListener("submit", flipCard);
-
-/*this is to unstick focus from reset button after click so hitting space bar wont keep resetting the game:
-document.addEventListener("click", function () {
-  if (document.activeElement.toString() == "[object HTMLButtonElement]") {
-    document.activeElement.blur();
-  }
-});
-*/
-
-//spacebar key press
-/*document.addEventListener("keypress", function (e) {
-  e.preventDefault();
-  if (e.code == "Digit0") {
-    if (topCard.classList.contains("hideCard")) {
-      displayTopCard();
-    } else {
-      flipCard();
-    }
-  }
-});
-document.addEventListener("keypress", function (e) {
-  e.preventDefault();
-  if (e.code == "Digit1") {
-    resetGame();
-  }
-});
-*/
