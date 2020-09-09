@@ -30,10 +30,10 @@
 
 ## Instructions
 
-###### After loading the page, 'click' or 'tap' on the middle picture, or 'press' the right arrow key to enter the forest and start testing your knowledge of poisonous plants. Enter your guess before flipping over the next card or you'll never leave.... Guess all 14 poisonous plants correctly and you will escape the forest!
+###### After loading the page, you can click on a module in the left hand navigation menu. Within each module are specifically labeled components that correspond to the bouncer Adobe 
 
 ## Credits
 
-###### All pictures were borrowed from the WebMd website slideshow on poisonous plants, pixabay, unsplash and pexels. All programming knowledge was gained while under the study of Noah Clark and Roger Campbell at General Assembly.
+###### All designs for components and pictures were taken from the Adobe XD bouncer mock up.
 
-#### For more information on poisonous plants visit: https://www.webmd.com/skin-problems-and-treatments/ss/slideshow-poison-plants-guide
+#### For more information on React visit: For more information on Storybook visit: 

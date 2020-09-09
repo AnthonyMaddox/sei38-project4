@@ -57,20 +57,20 @@ class Flashcard {
     this.img = img;
   }
 }
-const ivy = new Flashcard("Poison Ivy", "imgs/ivy.jpg");
-const oak = new Flashcard("Poison Oak", "imgs/oak.jpg");
-const sumac = new Flashcard("Poison Sumac", "imgs/sumac.jpg");
-const foxglove = new Flashcard("Foxglove", "imgs/foxglove.jpg");
-const jimsonweed = new Flashcard("Jimsonweed", "imgs/jimsonweed.jpg");
-const hemlock = new Flashcard("Hemlock", "imgs/hemlock.jpg");
-const oleander = new Flashcard("Oleander", "imgs/oleander.jpg");
-const parnsnip = new Flashcard("Parnsnip", "imgs/parnsnip.jpg");
-const nettle = new Flashcard("Stinging Nettle", "imgs/nettle.jpg");
-const nightshade = new Flashcard("Nightshade", "imgs/nightshade.jpg");
-const azalea = new Flashcard("Azalea", "imgs/azalea.jpg");
-const mistletoe = new Flashcard("Mistletoe", "imgs/mistletoe.jpg");
-const hogweed = new Flashcard("Hogweed", "imgs/hogweed.jpg");
-const trumpet = new Flashcard("Trumpet Flower", "imgs/trumpet.jpg");
+const ivy = new Flashcard("poison ivy", "imgs/ivy.jpg");
+const oak = new Flashcard("poison oak", "imgs/oak.jpg");
+const sumac = new Flashcard("poison sumac", "imgs/sumac.jpg");
+const foxglove = new Flashcard("foxglove", "imgs/foxglove.jpg");
+const jimsonweed = new Flashcard("jimsonweed", "imgs/jimsonweed.jpg");
+const hemlock = new Flashcard("hemlock", "imgs/hemlock.jpg");
+const oleander = new Flashcard("oleander", "imgs/oleander.jpg");
+const parnsnip = new Flashcard("parnsnip", "imgs/parnsnip.jpg");
+const nettle = new Flashcard("stinging nettle", "imgs/nettle.jpg");
+const nightshade = new Flashcard("nightshade", "imgs/nightshade.jpg");
+const azalea = new Flashcard("azalea", "imgs/azalea.jpg");
+const mistletoe = new Flashcard("mistletoe", "imgs/mistletoe.jpg");
+const hogweed = new Flashcard("hogweed", "imgs/hogweed.jpg");
+const trumpet = new Flashcard("creeping trumpet", "imgs/trumpet.jpg");
 const gameOverCard = new Flashcard("You Escaped the Forest!", "deckTop.jpg");
 
 //Fisher-Yates Shuffle found@ https://www.frankmitchell.org/2015/01/fisher-yates/
@@ -166,7 +166,7 @@ function flipCard() {
 //compareCards function
 
 function compareCards(e) {
-  input.value = input.value.charAt(0).toUpperCase() + input.value.slice(1);
+  input.value = input.value.toLowerCase();
   e.preventDefault();
   if (input.value == activeCard.name) {
     let newScore = eval(score.innerText);

@@ -51,7 +51,7 @@ form {
   perspective: 1000px;
   position: relative;
   height: 35vh;
-  width: 70vw;
+  width: 65vw;
   background-image: url("imgs/trunk.jpg");
   background-position: center;
   background-size: cover;
@@ -63,9 +63,10 @@ form {
 .innerCardDiv {
   position: absolute;
   height: 35vh;
-  width: 70vw;
+  width: 65vw;
   transform-style: preserve-3d;
-  transition: all 0.4s ease;
+  -webkit-transform-style: preserve-3d;
+  transition: all 0.5s ease;
 }
 .innerCardDiv:active {
   transform: rotateY(180deg);
@@ -73,8 +74,9 @@ form {
 .topCard {
   position: absolute;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   height: 35vh;
-  width: 70vw;
+  width: 65vw;
   background-position: center;
   background-size: cover;
   border: 2px solid rgb(5, 61, 5);
@@ -83,12 +85,13 @@ form {
 .bottomCard {
   position: absolute;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: rgb(0, 0, 0);
   height: 35vh;
-  width: 70vw;
+  width: 65vw;
   font-family: "Fondamento", cursive;
   font-size: 30px;
   font-weight: bolder;
@@ -207,20 +210,20 @@ input[type="submit"] {
 @media only screen and (min-width: 1000px) {
   .cardDiv {
     height: 50vh;
-    width: 70vw;
+    width: 60vw;
   }
   .bottomCard {
     height: 50vh;
-    width: 70vw;
+    width: 60vw;
     font-size: 40px;
   }
   .topCard {
     height: 50vh;
-    width: 70vw;
+    width: 60vw;
   }
   .innerCardDiv {
     height: 50vh;
-    width: 70vw;
+    width: 60vw;
   }
   .gameTitle {
     font-size: 60px;
@@ -230,19 +233,38 @@ input[type="submit"] {
 @media only screen and (min-width: 1400px) {
   .cardDiv {
     height: 45vh;
-    width: 60vw;
+    width: 50vw;
   }
   .bottomCard {
     height: 45vh;
-    width: 60vw;
+    width: 50vw;
     font-size: 40px;
   }
   .topCard {
     height: 45vh;
-    width: 60vw;
+    width: 50vw;
   }
   .innerCardDiv {
     height: 45vh;
-    width: 60vw;
+    width: 50vw;
+  }
+}
+@media only screen and (max-height: 550px) {
+  .cardDiv {
+    height: 45vh;
+    width: 50vw;
+  }
+  .bottomCard {
+    height: 45vh;
+    width: 50vw;
+    font-size: 40px;
+  }
+  .topCard {
+    height: 45vh;
+    width: 50vw;
+  }
+  .innerCardDiv {
+    height: 45vh;
+    width: 50vw;
   }
 }
