@@ -168,7 +168,7 @@ function flipCard() {
 function compareCards(e) {
   input.value = input.value.toLowerCase();
   e.preventDefault();
-  if (input.value == activeCard.name) {
+  if (input.value.toLowerCase() == activeCard.name.toLowerCase()) {
     let newScore = eval(score.innerText);
     newScore += 1;
     score.innerText = newScore;
