@@ -1,5 +1,6 @@
 # README
-##### Deployed Link: https://anthonymaddox.github.io/sei38-project4/ 
+
+##### Deployed Link: https://anthonymaddox.github.io/sei38-project4/
 
 ### Contents
 
@@ -31,10 +32,8 @@
 
 ## Instructions
 
-###### After loading the page, you can click on a module in the left hand navigation menu. Within each module are specifically labeled components that correspond to the bouncer Adobe 
+###### After loading the page, you can click on a module in the left hand navigation menu. Within each module are specifically labeled components that correspond to the bouncer Adobe
 
 ## Credits
 
-###### All designs for components and pictures were taken from the Adobe XD bouncer mock up.
-
-#### For more information on React visit: For more information on Storybook visit: 
+###### Thanks to WebMD and pixabay for providing all of the pictures and knowledge.
