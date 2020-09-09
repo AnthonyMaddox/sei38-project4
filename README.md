@@ -32,8 +32,8 @@
 
 ## Instructions
 
-###### After loading the page, you can click on a module in the left hand navigation menu. Within each module are specifically labeled components that correspond to the bouncer Adobe
+###### Click on the forest to enter and play the game! Click or tap on the flashcard to proceed. The right arrow key on the keyboard also functions to flip through the cards. Reset the game if you're lost and want to reset the score. Good luck.
 
 ## Credits
 
-###### Thanks to WebMD and pixabay for providing all of the pictures and knowledge.
+###### Thanks to WebMD and pixabay for providing all of the pictures and information. Special thanks to Noah Clark and Roger Campbell for the programming knowledge.
